@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "91389655357",
+    "firebase_url": "https://decideo-a2b20.firebaseio.com",
+    "project_id": "decideo-a2b20",
+    "storage_bucket": "decideo-a2b20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:91389655357:android:8ee5185397651a4a57ed54",
+        "android_client_info": {
+          "package_name": "com.example.decide_o"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "91389655357-286ih60v615gv1qit1nf16l7ihilokid.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.decide_o",
+            "certificate_hash": "a2a3d6093870cc949cedfadfca0146b96fe5a259"
+          }
+        },
+        {
+          "client_id": "91389655357-96m89jekjeg38ta4v9r6huejgvdudo7m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRyGiqhXkr18_ez5ZvtVJ2ZDiG8IWWVuw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "91389655357-96m89jekjeg38ta4v9r6huejgvdudo7m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

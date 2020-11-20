@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/search"
+    android:title="search"
+        android:icon="@drawable/ic_search_black_24dp"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/notification"
+        android:title="notification"
+        android:icon="@drawable/ic_notifications_24"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/menu_as"
+        android:title="Account Settings" />
+    <item
+        android:id="@+id/menu_au"
+        android:title="All Users" />
+    <item
+        android:id="@+id/menu_lo"
+        android:title="Log out" />
+</menu>
