@@ -45,37 +45,38 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-        @Override
-        public boolean onCreateOptionsMenu (Menu menu){
-            MenuInflater inflater = getMenuInflater();
-            inflater.inflate(R.menu.main_menu, menu);
-            return true;
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected (MenuItem item){
+        super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.menu_lo) {
+            FirebaseAuth.getInstance().signOut();
+            Intent startintent = new Intent(MainActivity.this, StartActivity.class);
+            startActivity(startintent);
 
         }
+        if(item.getItemId()==R.id.search){
+            Intent searchintent = new Intent(MainActivity.this, search.class);
+            startActivity(searchintent);
 
-        @Override
-        public boolean onOptionsItemSelected (MenuItem item){
-            super.onOptionsItemSelected(item);
-            if (item.getItemId() == R.id.menu_lo) {
-                FirebaseAuth.getInstance().signOut();
-                Intent startintent = new Intent(MainActivity.this, StartActivity.class);
-                startActivity(startintent);
-
-            }
-            if(item.getItemId()==R.id.search){
-                Intent searchintent = new Intent(MainActivity.this, search.class);
-                startActivity(searchintent);
-
-            }
-            if(item.getItemId()== R.id.notification){
-                Intent notifintent = new Intent(MainActivity.this, search.class);
-                startActivity(notifintent);
-
-            }
-            if(item.getItemId()==R.id.userlist){
-
-            }
-            return true;
         }
+        if(item.getItemId()== R.id.notification){
+            Intent notifintent = new Intent(MainActivity.this, search.class);
+            startActivity(notifintent);
+
+        }
+        if(item.getItemId()==R.id.menu_au){
+            Intent userintent = new Intent(MainActivity.this, search.class);
+            startActivity(userintent);
+        }
+        return true;
+    }
 
 }
