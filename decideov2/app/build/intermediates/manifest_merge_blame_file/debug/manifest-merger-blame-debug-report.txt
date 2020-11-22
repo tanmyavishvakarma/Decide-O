@@ -1,0 +1,139 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.decide_o"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:5:22-64
+12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+12-->[com.google.firebase:firebase-database:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\09b6da84192b27e8c943ae7f83fe1153\jetified-firebase-database-16.0.4\AndroidManifest.xml:22:5-79
+12-->[com.google.firebase:firebase-database:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\09b6da84192b27e8c943ae7f83fe1153\jetified-firebase-database-16.0.4\AndroidManifest.xml:22:22-76
+13
+14    <application
+14-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:7:5-36:19
+15        android:allowBackup="true"
+15-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:8:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.3.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\270423ddb1671e01cac39989754ca36c\core-1.3.1\AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:icon="@mipmap/ic_launcher"
+18-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:9:9-43
+19        android:label="@string/app_name"
+19-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:10:9-41
+20        android:roundIcon="@mipmap/ic_launcher_round"
+20-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:11:9-54
+21        android:supportsRtl="true"
+21-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:12:9-35
+22        android:testOnly="true"
+23        android:theme="@style/AppTheme" >
+23-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:13:9-40
+24        <activity
+24-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:14:9-82
+25            android:name="com.example.decide_o.AllUsers"
+25-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:14:19-43
+26            android:label="All Users" />
+26-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:14:44-69
+27        <activity
+27-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:15:9-17:43
+28            android:name="com.example.decide_o.search"
+28-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:16:13-35
+29            android:label="Add Friends" />
+29-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:17:13-40
+30        <activity
+30-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:18:9-20:37
+31            android:name="com.example.decide_o.login"
+31-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:19:13-34
+32            android:label="Login" />
+32-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:20:13-34
+33        <activity
+33-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:21:9-23:46
+34            android:name="com.example.decide_o.registeration"
+34-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:22:13-42
+35            android:label="Create Account" />
+35-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:23:13-43
+36        <activity
+36-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:24:9-26:66
+37            android:name="com.example.decide_o.StartActivity"
+37-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:25:13-42
+38            android:theme="@style/Theme.AppCompat.NoActionBar" />
+38-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:26:13-63
+39        <activity
+39-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:27:9-35:20
+40            android:name="com.example.decide_o.MainActivity"
+40-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:28:13-41
+41            android:label="Decide-O" >
+41-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:29:13-37
+42            <intent-filter>
+42-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:30:13-34:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:31:17-69
+43-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:31:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:33:17-77
+45-->C:\Users\Tanmya\Downloads\decideov2\decideov2\app\src\main\AndroidManifest.xml:33:27-74
+46            </intent-filter>
+47        </activity>
+48        <activity
+48-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:23:9-29:75
+49            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+49-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:24:13-85
+50            android:excludeFromRecents="true"
+50-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:25:13-46
+51            android:exported="true"
+51-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:26:13-36
+52            android:launchMode="singleInstance"
+52-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:27:13-48
+53            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+53-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:28:13-102
+54            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+54-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:29:13-72
+55
+56        <service android:name="com.google.firebase.components.ComponentDiscoveryService" >
+56-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:31:9-35:19
+56-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:31:18-89
+57            <meta-data
+57-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:32:13-34:85
+58                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+58-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:33:17-109
+59                android:value="com.google.firebase.components.ComponentRegistrar" />
+59-->[com.google.firebase:firebase-auth:16.0.4] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\33166e277cf17c58b8c5ef2038d31f80\jetified-firebase-auth-16.0.4\AndroidManifest.xml:34:17-82
+60        </service>
+61
+62        <meta-data
+62-->[com.firebaseui:firebase-ui-database:2.0.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\4eb260fc4cbe8d5f1a86e83a016ab24d\jetified-firebase-ui-database-2.0.1\AndroidManifest.xml:14:9-16:69
+63            android:name="com.google.android.gms.version"
+63-->[com.firebaseui:firebase-ui-database:2.0.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\4eb260fc4cbe8d5f1a86e83a016ab24d\jetified-firebase-ui-database-2.0.1\AndroidManifest.xml:15:13-58
+64            android:value="@integer/google_play_services_version" />
+64-->[com.firebaseui:firebase-ui-database:2.0.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\4eb260fc4cbe8d5f1a86e83a016ab24d\jetified-firebase-ui-database-2.0.1\AndroidManifest.xml:16:13-66
+65
+66        <activity
+66-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\83871ac9ad5ed6eca1b33e4438ed01df\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+67            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+67-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\83871ac9ad5ed6eca1b33e4438ed01df\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+68            android:exported="false"
+68-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\83871ac9ad5ed6eca1b33e4438ed01df\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+69            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+69-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\83871ac9ad5ed6eca1b33e4438ed01df\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+70
+71        <provider
+71-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\ee74f838333cb86e34e41a6080ebbb48\jetified-firebase-common-16.0.3\AndroidManifest.xml:10:9-14:39
+72            android:name="com.google.firebase.provider.FirebaseInitProvider"
+72-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\ee74f838333cb86e34e41a6080ebbb48\jetified-firebase-common-16.0.3\AndroidManifest.xml:11:13-77
+73            android:authorities="com.example.decide_o.firebaseinitprovider"
+73-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\ee74f838333cb86e34e41a6080ebbb48\jetified-firebase-common-16.0.3\AndroidManifest.xml:12:13-72
+74            android:exported="false"
+74-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\ee74f838333cb86e34e41a6080ebbb48\jetified-firebase-common-16.0.3\AndroidManifest.xml:13:13-37
+75            android:initOrder="100" />
+75-->[com.google.firebase:firebase-common:16.0.3] C:\Users\Tanmya\.gradle\caches\transforms-2\files-2.1\ee74f838333cb86e34e41a6080ebbb48\jetified-firebase-common-16.0.3\AndroidManifest.xml:14:13-36
+76    </application>
+77
+78</manifest>
