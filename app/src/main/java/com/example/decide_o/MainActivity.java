@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         if(item.getItemId()==R.id.menu_au){
-            Intent userintent = new Intent(MainActivity.this, search.class);
+            Intent userintent = new Intent(MainActivity.this, AllUsers.class);
             startActivity(userintent);
         }
         return true;
