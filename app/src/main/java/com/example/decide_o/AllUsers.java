@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,8 +50,20 @@ public class AllUsers extends AppCompatActivity {
                 nUserDatabase
         ) {
             @Override
-            protected void populateViewHolder(UsersViewHolder usersViewHolder, Users users, int i) {
+            protected void populateViewHolder(UsersViewHolder usersViewHolder, final Users users, int position) {
                 usersViewHolder.setName(users.getName());
+
+                final String user_id=getRef(position).getKey();
+
+                usersViewHolder.nView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent profileintent=new Intent(AllUsers.this,ProfilePage.class);
+                        profileintent.putExtra("user_id",user_id);
+                        startActivity(profileintent);
+
+                    }
+                });
             }
         };
         nuserlist.setAdapter(firebaseRecyclerAdapter);
