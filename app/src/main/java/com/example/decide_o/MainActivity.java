@@ -63,12 +63,12 @@ public class MainActivity extends AppCompatActivity {
 
         }
         if(item.getItemId()==R.id.search){
-            Intent searchintent = new Intent(MainActivity.this, search.class);
+            Intent searchintent = new Intent(MainActivity.this, AllUsers.class);
             startActivity(searchintent);
 
         }
         if(item.getItemId()== R.id.notification){
-            Intent notifintent = new Intent(MainActivity.this, search.class);
+            Intent notifintent = new Intent(MainActivity.this, AllUsers.class);
             startActivity(notifintent);
 
         }
