@@ -24,29 +24,37 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 
 public class ProfilePage extends AppCompatActivity {
     private TextView ndisplay;
     private Button nrqstbtn;
+    private Button ndecline;
     private DatabaseReference nUserDatabase;
     private DatabaseReference nRootRef;
     private ProgressDialog  nProgressDialog;
+    private DatabaseReference nnotificationdatabase;
     private DatabaseReference nfriendrqsdatabase;
     private FirebaseUser ncurrent_user;
     private String ncurrent_state;
     private DatabaseReference nfrienddatabase;
+    private FirebaseAuth nAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
         final String user_id=getIntent().getStringExtra("user_id");
         nRootRef=FirebaseDatabase.getInstance().getReference();
+
+
+        nnotificationdatabase=FirebaseDatabase.getInstance().getReference().child("notification");
         nUserDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
         nfriendrqsdatabase=FirebaseDatabase.getInstance().getReference().child("Friend_Request");
         nfrienddatabase=FirebaseDatabase.getInstance().getReference().child("Friends");
         ncurrent_user= FirebaseAuth.getInstance().getCurrentUser();
         ndisplay=(TextView) findViewById(R.id.display_name);
         nrqstbtn=(Button)findViewById(R.id.request_btn);
+        ndecline=(Button) findViewById(R.id.decline_btn);
 
         ncurrent_state="not_friends";
         nProgressDialog =new ProgressDialog(this);
@@ -55,27 +63,64 @@ public class ProfilePage extends AppCompatActivity {
         nProgressDialog.setCanceledOnTouchOutside(false);
         nProgressDialog.show();
 
+
+
+
+
         nUserDatabase.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
                 String display_name=dataSnapshot.child("name").getValue().toString();
                 ndisplay.setText(display_name);
+                if(ncurrent_user.getUid().equals(user_id)){
+                    nrqstbtn.setEnabled(false);
+                    nrqstbtn.setVisibility(View.INVISIBLE);
+                   ndecline.setEnabled(false);
+                    ndecline.setVisibility(View.INVISIBLE);
+                }
+
+
 
                 //accept rqst
                 nfriendrqsdatabase.child(ncurrent_user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild(user_id)){
-                            String req_type =dataSnapshot.child(user_id).child("request_type").getValue().toString();
-                            if(req_type.equals("received")){
-                                ncurrent_state="req_received";
+
+                        if(dataSnapshot.hasChild(user_id)) {
+                            String req_type = dataSnapshot.child(user_id).child("request_type").getValue().toString();
+                            if (req_type.equals("received")) {
+                                ncurrent_state = "req_received";
                                 nrqstbtn.setText("Accept Friend Request");
-                            }else if(req_type.equals("sent")){
-                                ncurrent_state="req_sent";
+                                ndecline.setEnabled(true);
+                                ndecline.setVisibility(View.VISIBLE);
+                            } else if (req_type.equals("sent")) {
+                                ncurrent_state = "req_sent";
                                 nrqstbtn.setText("Cancel Friend Request");
+                                ndecline.setEnabled(false);
+                                ndecline.setVisibility(View.INVISIBLE);
                             }
+                            nProgressDialog.dismiss();
+                        }else{
+                            nfrienddatabase.child(ncurrent_user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if(dataSnapshot.hasChild(user_id)){
+                                        ncurrent_state="friends";
+                                         nrqstbtn.setText("Unfriend");
+                                        ndecline.setEnabled(false);
+                                        ndecline.setVisibility(View.INVISIBLE);
+                                    }
+                                    nProgressDialog.dismiss();
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) {
+                                    nProgressDialog.dismiss();
+                                }
+                            });
                         }
-                        nProgressDialog.dismiss();
+
                     }
 
                     @Override
@@ -105,10 +150,25 @@ public class ProfilePage extends AppCompatActivity {
                                 nfriendrqsdatabase.child(user_id).child(ncurrent_user.getUid()).child("request_type").setValue("received").addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
                                     public void onSuccess(Void aVoid) {
+                                        ndecline.setEnabled(false);
+                                        ndecline.setVisibility(View.INVISIBLE);
                                         nrqstbtn.setEnabled(true);
-                                        ncurrent_state="req_sent";
-                                        nrqstbtn.setText("Cancel Friend Request");
-                                        Toast.makeText(ProfilePage.this,"Request Sent",Toast.LENGTH_SHORT).show();
+                                        HashMap<String,String> notificationData=new HashMap<>();
+                                        notificationData.put("from",ncurrent_user.getUid());
+                                        notificationData.put("type","request");
+
+                                        nnotificationdatabase.child(user_id).push().setValue(notificationData).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                ncurrent_state="req_sent";
+                                                nrqstbtn.setText("Cancel Friend Request");
+                                                ndecline.setEnabled(false);
+                                                ndecline.setVisibility(View.INVISIBLE);
+                                                Toast.makeText(ProfilePage.this,"Request Sent",Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+
                                     }
                                 });
                             }else{
@@ -128,6 +188,8 @@ public class ProfilePage extends AppCompatActivity {
                                 public void onSuccess(Void aVoid) {
                                     nrqstbtn.setEnabled(true);
                                     ncurrent_state="not_friends";
+                                    ndecline.setEnabled(false);
+                                    ndecline.setVisibility(View.INVISIBLE);
                                     nrqstbtn.setText("Send Friend Request");
                                 }
                             });
@@ -151,6 +213,8 @@ public class ProfilePage extends AppCompatActivity {
                                                 public void onSuccess(Void aVoid) {
                                                     nrqstbtn.setEnabled(true);
                                                     ncurrent_state="friends";
+                                                    ndecline.setEnabled(false);
+                                                    ndecline.setVisibility(View.INVISIBLE);
                                                     nrqstbtn.setText("UnFriend");
                                                 }
                                             });

@@ -65,6 +65,7 @@
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/redColor"
         android:text="DECLINE FRIEND REQUEST"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:visibility="invisible" />
 
 </RelativeLayout>
