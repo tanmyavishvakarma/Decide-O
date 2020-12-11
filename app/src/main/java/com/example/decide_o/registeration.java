@@ -22,6 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.w3c.dom.Text;
 
@@ -78,9 +79,10 @@ public class registeration extends AppCompatActivity {
                     FirebaseUser currentuser=FirebaseAuth.getInstance().getCurrentUser();
                     String uid=currentuser.getUid();
                     nDatabase= FirebaseDatabase.getInstance().getReference().child("Users").child(uid);
-
+                    String device_token= FirebaseInstanceId.getInstance().getToken();
                     HashMap<String,String> userMap=new HashMap<>();
                     userMap.put("name",fname);
+                    userMap.put("device_tokens",device_token);
 
                     nDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override

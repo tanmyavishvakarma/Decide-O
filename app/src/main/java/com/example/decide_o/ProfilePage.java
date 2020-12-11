@@ -39,6 +39,8 @@ public class ProfilePage extends AppCompatActivity {
     private String ncurrent_state;
     private DatabaseReference nfrienddatabase;
     private FirebaseAuth nAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -160,6 +162,8 @@ public class ProfilePage extends AppCompatActivity {
                                         nnotificationdatabase.child(user_id).push().setValue(notificationData).addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
+
+
                                                 ncurrent_state="req_sent";
                                                 nrqstbtn.setText("Cancel Friend Request");
                                                 ndecline.setEnabled(false);
