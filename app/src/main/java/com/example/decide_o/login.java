@@ -69,7 +69,7 @@ public class login extends AppCompatActivity {
                     nLogProgress.dismiss();
                     String current_user_id=nAuth.getCurrentUser().getUid();
                     String deviceToken= FirebaseInstanceId.getInstance().getToken();
-                    nUserDatabase.child(current_user_id).child("device_tokens").setValue(deviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    nUserDatabase.child(current_user_id).child("device_token").setValue(deviceToken).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
                             Toast.makeText(login.this, "Login Complete", Toast.LENGTH_SHORT).show();

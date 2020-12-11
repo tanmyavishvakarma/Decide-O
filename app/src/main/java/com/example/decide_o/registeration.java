@@ -82,7 +82,7 @@ public class registeration extends AppCompatActivity {
                     String device_token= FirebaseInstanceId.getInstance().getToken();
                     HashMap<String,String> userMap=new HashMap<>();
                     userMap.put("name",fname);
-                    userMap.put("device_tokens",device_token);
+                    userMap.put("device_token",device_token);
 
                     nDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
